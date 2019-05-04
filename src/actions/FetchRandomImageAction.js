@@ -1,4 +1,4 @@
-import request from 'superagent'
+import { getDogsList } from './DogsListAction'
 
 
 export const GET_RANDOM_IMAGE = 'GET_RANDOM_IMAGE'
@@ -17,5 +17,12 @@ export function fetchRandomImage(breed) {
                 payload: image
             }))
             .catch(error => console.error('Error'))
+
+export function fetchRandomImage(assignRandomValues = false) {
+    // console.log('random image action')
+    return function (dispatch) {
+
+        dispatch(getDogsList(true))
+
     }
 }

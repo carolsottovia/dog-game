@@ -1,0 +1,37 @@
+button {
+    background-color: rgb(63, 113, 177);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+
+  .scoreboard-div {
+    display: block;
+    text-align: left;
+    font-size: 15px;
+    padding: 13px;
+    margin: 0px;
+    margin-left:15px;
+    background-color: white;
+    width: 200px;
+}
+/* 
+p{
+  width: 200px;
+} */
+
+  .game-div {
+      margin-bottom: 40px;
+  }
+
+  .dogs-image{
+      max-width: 250px;
+      margin-top: 0px;
+  }
