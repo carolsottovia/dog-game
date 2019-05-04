@@ -24,7 +24,6 @@ export default (state = initialState, action = {}) => {
         }
       )
     }
-
     case "CLEAN_STATS": {
       return initialState
     }

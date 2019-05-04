@@ -2,7 +2,9 @@ import * as React from 'react'
 import { Link } from "react-router-dom"
 import { connect } from 'react-redux'
 import { cleanStats } from '../actions/ScoreAction'
+
 import { cleanData } from '../actions/DogsListAction'
+
 import store from '../store'
 
 class EndGame extends React.Component {
