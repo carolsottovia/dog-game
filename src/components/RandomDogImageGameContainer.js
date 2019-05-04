@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import RandomDogImageGame from './RandomDogImageGame'
+import RandomQuestion from './RandomQuestion'
 
 
 import { Prompt } from 'react-router'
@@ -13,8 +14,12 @@ class RandomDogImageGameContainer extends Component {
         return (
             <div>
                 <RandomDogImageGame />
+
+                <RandomQuestion />
+
                 <Link to={'/end'}><button className='endBtn'>End the game</button></Link>
                 <Prompt message="Are you sure you want to end the game?" />
+
             </div>
         )
     }

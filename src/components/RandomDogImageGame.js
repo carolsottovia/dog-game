@@ -107,6 +107,12 @@ export class RandomDogImageGame extends Component {
     // }
 
     render() {
+
+        const randomImage = this.props.image
+        const list = this.props.dogslist
+
+        console.log(randomImage)
+
         // console.log('this.score test:', this.props.score)
         const randomImage = this.props.currentDog.imageUrl
         const correctAnswer = this.props.currentDog.name
@@ -117,6 +123,7 @@ export class RandomDogImageGame extends Component {
         const shuffledArray = this.shuffle(answerArray)
         // console.log('shuffledarray', shuffledArray)
         const list = this.props.dogslist
+
 
         return (
             <div className="game-div">
@@ -133,7 +140,19 @@ export class RandomDogImageGame extends Component {
                 <button onClick={() => this.buttonClickedtwo(shuffledArray, correctAnswer)}>{shuffledArray[1]}</button>
                 <button onClick={() => this.buttonClickedthree(shuffledArray, correctAnswer)}>{shuffledArray[2]}</button>
 
+
+            < div >
+                <h1>Random Dog Image Game</h1>
+                <img src={randomImage} alt='dog' />
+                {randomImage}
+                {list}
+
             </div>
+
+
+
+            </div>
+
         )
     }
 }
@@ -144,10 +163,14 @@ const mapStateToProps = (state) => {
 
     return {
         image: state.dogimage,
+
+        dogslist: state.DogsListReducer.dogsList
+
         currentDog: state.DogsImagesReducer.currentDog,
         randomDogOne: state.DogsImagesReducer.twoRandomDogs.one,
         randomDogTwo: state.DogsImagesReducer.twoRandomDogs.two,
         score: state.score,
+
     }
 }
 

@@ -1,6 +1,10 @@
+
+import React from 'react';
+
 import React, { Component } from 'react';
 import './Home.css'
 import home from './puppies.jpg'
+
 
 
 

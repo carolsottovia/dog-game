@@ -12,6 +12,7 @@ export const setDogsList = (dogslist) => {
     }
 }
 
+
 export const setCurrentDog = (data) => {
     return {
         type: SET_CURRENTDOG,
@@ -75,3 +76,4 @@ export function getDogsList(assignRandomValues = false) {
             .catch(error => { console.error('Error') })
     }
 }
+
