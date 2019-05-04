@@ -11,6 +11,8 @@ import GameContainer from './components/GameContainer';
 import EndGame from './components/EndGame';
 
 
+
+
 class App extends Component {
   render() {
     return (
@@ -22,7 +24,9 @@ class App extends Component {
           <Route path="/dog-game-1" component={RandomDogImageGameContainer} />
           <Route path="/dog-game-2" component={DogQuestionContainer} />
           <Route path="/dog-breeds/:breed" component={DogBreedImagesContainer} />
+
           <Route exact path="/game" component={GameContainer} />
+
           <Route exact path="/end" component={EndGame} />
         </div>
 

@@ -2,10 +2,14 @@ import request from 'superagent'
 
 export const SET_DOGSLIST = 'SET_DOGSLIST'
 export const SET_CURRENTDOG = 'SET_CURRENTDOG'
+
 export const SET_BREEDS = 'SET_BREEDS'
 export const OVERWRITE_BREEDS = 'OVERWRITE_BREEDS'
 export const CORRECT_ANSWER = 'CORRECT_ANSWER'
 export const REMOVE_BREED = 'REMOVE_BREED'
+
+export const TWO_RANDOMDOGS = 'TWO_RANDOMDOGS'
+
 export const CLEAN_DATA = 'CLEAN_DATA'
 
 export const setDogsList = (dogslist) => {
@@ -15,7 +19,8 @@ export const setDogsList = (dogslist) => {
     }
 }
 
-export const setCurrentDog = (data)=> {
+
+export const setCurrentDog = (data) => {
     return {
         type: SET_CURRENTDOG,
         payload: {
@@ -25,6 +30,21 @@ export const setCurrentDog = (data)=> {
     }
 }
 
+export const twoRandomDogs = (data) => {
+    return {
+        type: TWO_RANDOMDOGS,
+        payload: {
+            one: data.one,
+            two: data.two
+        }
+    }
+}
+
+export const cleanData = () => {
+    return {
+        type: CLEAN_DATA
+    }
+}
 
 export function newData(breeds, randomBreed) {
     return {
@@ -80,20 +100,20 @@ export function getDogsList(assignRandomValues = false) {
                     const randomBreed2 = breeds[randomIndex2]
                     const randomIndex3 = Math.floor(Math.random() * breeds.length)
                     const randomBreed3 = breeds[randomIndex3]
- 
- 
+
                     const randomBreedImageUrl = `https://dog.ceo/api/breed/${encodeURIComponent(randomBreed)}/images/random`
                     request.get(randomBreedImageUrl).then(response => {
                         const imageUrl = response.body.message
                         console.log(imageUrl)
                         dispatch(setCurrentDog({ name: randomBreed, imageUrl: imageUrl }))
- 
-                        // dispatch(twoRandomDogs({ one: randomBreed2, two: randomBreed3 }))
 
+                        dispatch(twoRandomDogs({ one: randomBreed2, two: randomBreed3 }))
                     }
                     )
                 }
-            }
-        )    
+            })
+            .catch(error => { console.error('Error') })
     }
-}        
+}
+
+
